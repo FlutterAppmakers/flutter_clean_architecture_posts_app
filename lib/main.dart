@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/app_theme.dart';
+import 'features/posts/presentation/pages/posts_page.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
@@ -20,33 +21,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-           BlocProvider(create: (_)=> di.sl<PostsBloc>()),
+           BlocProvider(create: (_)=> di.sl<PostsBloc>()..add(GetAllPostsEvent())),
            BlocProvider(create: (_)=> di.sl<AddDeleteUpdatePostBloc>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Posts App',
         theme: appTheme,
-        home: const MyHomePage(),
+        home: const PostsPage(),
       ),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Posts"),
-      ),
-      body: Center(
-        child: Text("Hello World"),
-      )
-    );
-  }
-}
