@@ -7,6 +7,11 @@ final appTheme = ThemeData(
     appBarTheme: AppBarTheme(
       backgroundColor: primaryColor,
       centerTitle: true,
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
     ),
     brightness: Brightness.light,
     primaryColor: primaryColor,
@@ -17,6 +22,28 @@ final appTheme = ThemeData(
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: primaryColor,
       foregroundColor: secondaryColor,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
+        iconColor: Colors.white
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
+          iconColor: Colors.white
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        backgroundColor: primaryColor,
+        foregroundColor: Colors.white,
+        side: BorderSide(color: primaryColor),
+          iconColor: Colors.white
+      ),
     ),
     inputDecorationTheme: InputDecorationTheme(
         floatingLabelStyle: TextStyle(color: primaryColor),

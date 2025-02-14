@@ -29,12 +29,13 @@ class PostsBloc extends Bloc<PostsEvent, PostsState> {
   }
 
   String _mapFailureToMessage(Failure failure) {
+    print("failure ${failure.runtimeType}");
     switch(failure.runtimeType) {
-      case ServerFailure _:
+      case ServerFailure:
         return SERVER_FAILURE_MESSAGE;
-      case EmptyCacheFailure _:
+      case EmptyCacheFailure:
         return EMPTY_CACHE_FAILURE_MESSAGE;
-      case OfflineFailure _:
+      case OfflineFailure:
         return OFFLINE_FAILURE_MESSAGE;
       default:
         return "Unexpected Error, Please try again later.";

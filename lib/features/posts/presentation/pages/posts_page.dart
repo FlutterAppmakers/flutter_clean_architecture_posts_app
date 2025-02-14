@@ -1,10 +1,11 @@
 import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/posts/posts_bloc.dart';
+import 'package:clean_architecture_posts_app/features/posts/presentation/pages/post_add_update_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/widgets/loading_widget.dart';
-import '../widgets/message_display_widget.dart';
-import '../widgets/post_list_widget.dart';
+import '../widgets/posts_page/message_display_widget.dart';
+import '../widgets/posts_page/post_list_widget.dart';
 
 class PostsPage extends StatelessWidget {
   const PostsPage({super.key});
@@ -14,7 +15,7 @@ class PostsPage extends StatelessWidget {
     return Scaffold(
       appBar: _buildAppBar(),
       body: _buildBody(),
-      floatingActionButton:_buildFloatingActionButton() ,
+      floatingActionButton:_buildFloatingActionButton(context) ,
     );
   }
 
@@ -38,10 +39,18 @@ class PostsPage extends StatelessWidget {
 
   AppBar _buildAppBar() => AppBar(title: Text('Posts'),);
 
-  Widget _buildFloatingActionButton(){
+  Widget _buildFloatingActionButton(BuildContext context){
     return FloatingActionButton(
         onPressed: () {
-          
+          Navigator.push(
+              context,
+            MaterialPageRoute(
+                builder: (_) => PostAddUpdatePage(
+                    isUpdatePost:
+                    false
+                ),
+            ),
+          );
         }, child: Icon(Icons.add),
     );
   }

@@ -46,7 +46,7 @@ class PostsRepositoryImpl implements PostsRepository {
   @override
   Future<Either<Failure, Unit>> addPost(Post post) async{
     // TODO: implement addPost
-    final postModel = PostModel(id: post.id, title: post.title, body: post.body);
+    final postModel = PostModel(title: post.title, body: post.body);
   /* if(await networkInfo.isConnected) {
      try {
        await  remoteDataSource.addPost(postModel);
