@@ -45,6 +45,11 @@ final appTheme = ThemeData(
           iconColor: Colors.white
       ),
     ),
+    dividerTheme: DividerThemeData(
+      color: Colors.grey.shade300,
+      thickness: 0.5,
+      endIndent: 16,
+    ),
     inputDecorationTheme: InputDecorationTheme(
         floatingLabelStyle: TextStyle(color: primaryColor),
         iconColor: secondaryColor,
