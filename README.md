@@ -81,5 +81,5 @@ Add Post: Add a new post with a title and body.
 Edit Post: Update an existing post.
 View Post Details: View the full details of a post.
 
-Feel free to use, modify, and distribute this package for personal or commercial purposes. There are no restrictions on usage.
+Feel free to use, modify, and distribute this source code for personal or commercial purposes. There are no restrictions on usage.
 
